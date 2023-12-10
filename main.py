@@ -10,8 +10,13 @@ from time import sleep
 
 app = Flask(__name__)
 
+
+chrome_options = webdriver.ChromeOptions()
+chrome_options.add_argument("--headless")  # Add any other options you need
+
 # Initialize the Selenium WebDriver and navigate to the webpage
-driver = webdriver.Chrome('chromedriver')  # Adjust based on your preferred browser
+driver = webdriver.Chrome('chromedriver',options=chrome_options)  # Adjust based on your preferred browser
+
 driver.get("https://whatsapp.checkleaked.cc/380947100983")  # Specify the URL you want to navigate to
 
 # Wait for the element to be present on the page - to load fully
