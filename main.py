@@ -15,7 +15,7 @@ chrome_options = webdriver.ChromeOptions()
 chrome_options.add_argument("--headless")  # Add any other options you need
 
 # Initialize the Selenium WebDriver and navigate to the webpage
-driver = webdriver.Chrome(executable_path='chromedriver',options=chrome_options)  # Adjust based on your preferred browser
+driver = webdriver.Chrome(executable_path='/opt/render/project/src/chromedriver',options=chrome_options)  # Adjust based on your preferred browser
 
 driver.get("https://whatsapp.checkleaked.cc/380947100983")  # Specify the URL you want to navigate to
 
