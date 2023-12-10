@@ -5,18 +5,22 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.action_chains import ActionChains
-from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.common.service import Service
+from webdriver_manager.chrome import ChromeDriverManager
 from flask import Flask, render_template, request
 from time import sleep
 
 app = Flask(__name__)
 
-service = Service(executable_path='./chromedriver')
+#service = Service(executable_path='./chromedriver')
 chrome_options = webdriver.ChromeOptions()
 chrome_options.add_argument("--headless")  # Add any other options you need
+chrome_options.add_argument("--no-sandbox")  # Add any other options you need
+chrome_options.add_argument("--disable-dev-shm-usage")  # Add any other options you need
 
 # Initialize the Selenium WebDriver and navigate to the webpage
-driver = webdriver.Chrome(service=service,options=chrome_options)  # Adjust based on your preferred browser
+#driver = webdriver.Chrome(service=service,options=chrome_options)  # Adjust based on your preferred browser
+driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()),options=chrome_options)
 
 driver.get("https://whatsapp.checkleaked.cc/380947100983")  # Specify the URL you want to navigate to
 
