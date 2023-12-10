@@ -84,7 +84,7 @@ def get_data():
 
 
 if __name__ == '__main__':
-    app.run(host= '13.228.225.19',port=10000,debug=True)
+    app.run(host= '0.0.0.0',port=10000,debug=True)
 
 # Remember to quit the Selenium WebDriver when the Flask app is shut down
 @app.teardown_appcontext
