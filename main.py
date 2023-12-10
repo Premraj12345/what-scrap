@@ -17,7 +17,7 @@ chrome_options = webdriver.ChromeOptions()
 chrome_options.add_argument("--headless")  # Add any other options you need
 chrome_options.add_argument("--no-sandbox")  # Add any other options you need
 chrome_options.add_argument("--disable-dev-shm-usage")  # Add any other options you need
-
+chrome_options.binary_location("/usr/bin/google-chrome")
 # Initialize the Selenium WebDriver and navigate to the webpage
 #driver = webdriver.Chrome(service=service,options=chrome_options)  # Adjust based on your preferred browser
 driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()),options=chrome_options)
