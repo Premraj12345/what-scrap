@@ -1,3 +1,4 @@
 selenium
 flask
 webdriver_manager
+gunicorn
